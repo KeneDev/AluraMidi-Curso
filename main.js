@@ -3,23 +3,19 @@ function playSonido(idElementoAudio){
 }
 
 const listaDeTeclas = document.querySelectorAll('.tecla');
-const listaIdSonidos = document.querySelectorAll('#sonido_tecla_');
-let contador = 0;
 
-while( contador < listaDeTeclas.length ){ 
+for(let contador = 0; contador < listaDeTeclas.length; contador++){
     const tecla = listaDeTeclas[contador];
     const instrumento = tecla.classList[1];
-    //console.log(instrumento);
-
+    
     const idAudio = `#sonido_${instrumento}`  
     console.log(idAudio);
 
     tecla.onclick = function(){
         playSonido(idAudio);
     };
-    contador++;
-    //console.log('Vuelta = ' + contador);  
 }
+
 
 
 
